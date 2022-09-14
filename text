@@ -1,0 +1,21 @@
+cada numero tiene que tener su value correspondiente
+
+debe pasar su value al conjunto de numeros
+
+tiene que permitir que pueda ingresar varios numeros y parsearlos
+
+debe aplicar el operador numerico
+
+el usuario debe poder ingresar el segundo conjunto
+
+finalmente realizar el calculo de primerCOnjunto operadorNumerico segundoConjunto y almacenarlo en el resultado
+
+finalmente debe mostrar el valor de resultado
+
+tiene que tener una funcion de limpiar el resultado cuando el usuario activa de nuevo
+
+variables
+    primer conjunto de numeros
+    operador numerico
+    segundo conjunto
+    resultado
