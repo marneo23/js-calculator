@@ -1,8 +1,8 @@
-cada numero tiene que tener su value correspondiente
+cada numero tiene que tener un value - ok
 
-debe pasar su value al conjunto de numeros
+al tocar un boton, la app tiene que discriminar el numero mediante el value - ok
 
-tiene que permitir que pueda ingresar varios numeros y parsearlos
+tiene que permitir que pueda ingresar varios numeros y parsearlos - ok
 
 debe aplicar el operador numerico
 
