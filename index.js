@@ -2,25 +2,27 @@ let firstBlock = "";
 let secondBlock = "";
 let numericOperator = "";
 let result;
+let clear;
 
 let buttons = document.querySelectorAll(".numberButton");
 let display = document.getElementById("displayText");
 let buttonOperators = document.querySelectorAll(".operator");
 let numberButtonEqual = document.getElementById("numberButtonEqual");
+let buttonClear = document.getElementById("clearButton");
 
 const operationHandler = (event) => {
-  numericOperator = event.target.value;
-  display.innerText = "";
+  numericOperator = event.target.value; //numericOperator va a recibir el valor del boton que se clickee
+  display.innerText = numericOperator; //display va a mostrar el valor de numericOperator
 };
 
 const buttonsHandler = (event) => {
   if (numericOperator === "") {
     firstBlock += event.target.value;
-    display.innerText = firstBlock;
+    display.innerText = firstBlock; //si el numericOperator esta vacio, pasamos al display la primer tanda de numeros
   } else {
     secondBlock += event.target.value;
-    display.innerText = secondBlock;
-  }
+    display.innerText = secondBlock; //si el numericOperator ya tiene numeros, le pasamos la segunda tanda.
+  } //NOTA= "+=" es para que los numeros se adicionen en el display en vez de reemplazarse
 };
 
 const buttonEqualHandler = (event) => {
@@ -49,6 +51,17 @@ const buttonEqualHandler = (event) => {
   }
 };
 
+buttonClear.onclick = buttonClearHandler = (event) => {
+  if (display.innerText == "") {
+    display.innerText = "Clear";
+  } else {
+    firstBlock = "";
+    secondBlock = "";
+    //numericOperator = "";
+    //display.innerText = firstBlock;
+  }
+};
+
 buttons.forEach((button) => {
   button.addEventListener("click", buttonsHandler);
 });
@@ -59,26 +72,4 @@ buttonOperators.forEach((operator) => {
 
 numberButtonEqual.addEventListener("click", buttonEqualHandler);
 
-/*
-separar a los operators de los numeros con una clase, para que cuando los tocamos
-se borre lo que esta en el displayText y a la vez el operador 
-se guarde como string en una variable (les puse values de string como "x", "/", etc)
-una opcion seria que segun esa variable 
-hacer un if else que realice el calculo que corresponda
-*/
-/*
-buscar la manera de que numericOperator almacene solo el ULTIMO valor ingresado
-y reemplace el que tiene en el momento, para mantenerse siempre con 1 digito
-(porque si no, se permite poner muchos operadores numericos y queda como '4x4xx//+4-4')
-
-- podria hacer una funcion que agarre el n de caracteres y lo pase a una variable
-luego agarre el caracter que esta al final (con charAt, supongo) y lo devuelva a una
-string que va a ser la que finalmente muestre el display
-
-
-let numericOperatorLength = numericOperator.length;
-numericOperator.addEventListener();
-console.log(numericOperatorLength);
-
-/*buscar la manera de que el display deje de reflejar a firstBlock luego de tocar un operador,
-y que refleje a secondBlock. posterior a eso, que refleje solo el resultado. */
+//to do: cuando seguimos agregando operaciones tras un resultado, se bugea. hacer que se realicen las operaciones sobre el resultado en pantalla. Una idea puede ser asignar el resultado a "firstBlock"
