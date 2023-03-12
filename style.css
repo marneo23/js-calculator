@@ -21,7 +21,7 @@ main{
     border: 1px solid black;
 }
 
-.numberButton{
+.button{
     border: 1px solid black;
     display: flex;
     align-items: center;
@@ -31,10 +31,10 @@ main{
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1)
 }
 
-.numberButton:active{
+.button:active{
     background-color:gray;
 }
-.numberButton:hover{
+.button:hover{
     cursor: pointer;
 }
 

@@ -4,7 +4,7 @@ let numericOperator = "";
 let result;
 let clear;
 
-let buttons = document.querySelectorAll(".numberButton");
+let buttons = document.querySelectorAll(".button");
 let display = document.getElementById("displayText");
 let buttonOperators = document.querySelectorAll(".operator");
 let numberButtonEqual = document.getElementById("numberButtonEqual");
@@ -16,13 +16,20 @@ const operationHandler = (event) => {
 };
 
 const buttonsHandler = (event) => {
-  if (numericOperator === "") {
-    firstBlock += event.target.value;
-    display.innerText = firstBlock; //si el numericOperator esta vacio, pasamos al display la primer tanda de numeros
+  if ((display.innerText = result)) {
+    firstBlock = result;
+    secondBlock = "";
+    numericOperator = "";
+    result = null;
   } else {
-    secondBlock += event.target.value;
-    display.innerText = secondBlock; //si el numericOperator ya tiene numeros, le pasamos la segunda tanda.
-  } //NOTA= "+=" es para que los numeros se adicionen en el display en vez de reemplazarse
+    if (numericOperator === "") {
+      firstBlock += event.target.value;
+      display.innerText = firstBlock; //si el numericOperator esta vacio, pasamos al display la primer tanda de numeros
+    } else {
+      secondBlock += event.target.value;
+      display.innerText = secondBlock; //si el numericOperator ya tiene numeros, le pasamos la segunda tanda.
+    }
+  }
 };
 
 const buttonEqualHandler = (event) => {
@@ -57,8 +64,8 @@ buttonClear.onclick = buttonClearHandler = (event) => {
   } else {
     firstBlock = "";
     secondBlock = "";
-    //numericOperator = "";
-    //display.innerText = firstBlock;
+    numericOperator = "";
+    result = "";
   }
 };
 

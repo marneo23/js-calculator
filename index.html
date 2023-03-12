@@ -15,28 +15,24 @@
         <!--End display-->
 
         <!--Start Numbers-->
-        <button class="numberButton" value="1">1</button
-        ><button class="numberButton" value="2">2</button
-        ><button class="numberButton" value="3">3</button
-        ><button class="numberButton" value="4">4</button
-        ><button class="numberButton" value="5">5</button
-        ><button class="numberButton" value="6">6</button
-        ><button class="numberButton" value="7">7</button
-        ><button class="numberButton" value="8">8</button
-        ><button class="numberButton" value="9">9</button>
+        <button class="number button" value="1">1</button
+        ><button class="number button" value="2">2</button
+        ><button class="number button" value="3">3</button
+        ><button class="number button" value="4">4</button
+        ><button class="number button" value="5">5</button
+        ><button class="number button" value="6">6</button
+        ><button class="number button" value="7">7</button
+        ><button class="number button" value="8">8</button
+        ><button class="number button" value="9">9</button>
         <!--End Numbers-->
 
         <!--Start Operators-->
-        <button class="numberButton operator" value="+">+</button>
-        <button class="numberButton operator" value="-">-</button>
-        <button class="numberButton operator" value="x">x</button>
-        <button class="numberButton operator" value="/">/</button>
-        <button class="numberButton" id="numberButtonEqual">=</button>
-        <button
-          class="numberButton"
-          id="clearButton"
-          onclick(buttonClearHandler)
-        >
+        <button class="button operator" value="+">+</button>
+        <button class="button operator" value="-">-</button>
+        <button class="button operator" value="x">x</button>
+        <button class="button operator" value="/">/</button>
+        <button class="button" id="numberButtonEqual">=</button>
+        <button class="button" id="clearButton" onclick(buttonClearHandler)>
           CE
         </button>
         <!--End Operators (y equal)-->
@@ -45,10 +41,3 @@
     <script src="index.js" defer></script>
   </body>
 </html>
-
-<!--
-  Hay un pequeno problema en la defincion de las clases de los botones.
-  Creo que seria mas limpio que todos sean "button", despues separar
-  los botones por clase "number" y "operator".
-  Por ahora lo voy a dejar como esta.
--->
